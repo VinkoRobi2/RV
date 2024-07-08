@@ -1,0 +1,157 @@
+/* NavBar.css */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  display: flex;
+  position: sticky;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  padding: 20px;
+  background-color: #fff; /* Color de fondo del navbar */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.navbar-menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-item {
+  margin-left: 20px;
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+.navbar-item:nth-child(1) {
+  animation-delay: 0.5s;
+}
+
+.navbar-item:nth-child(2) {
+  animation-delay: 1s;
+}
+
+.navbar-item:nth-child(3) {
+  animation-delay: 1.5s;
+}
+
+.navbar-item a {
+  text-decoration: none;
+  font-size: 16px;
+  color: #000;
+  padding: 5px 10px;
+  transition: color 0.3s ease, background-color 0.3s ease; /* Transiciones para el hover */
+  position: relative; /* Añadido para posicionar correctamente la sombra */
+}
+
+.navbar-item a:hover {
+  color: #fff; /* Cambia el color del texto al hacer hover */
+  background-color: #4CAF50; /* Cambia el fondo al hacer hover a un color de temática */
+}
+
+.navbar-item a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px; /* Ajusta aquí la distancia de la sombra desde abajo */
+  width: 100%;
+  height: 2px; /* Altura de la sombra */
+  background-color: #000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Añadido sombra */
+  transition: all 0.3s ease; /* Transición de la sombra */
+}
+
+.navbar-item a:hover::after {
+  background-color: transparent; /* Oculta la sombra en hover */
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+.logo {
+  width: 150px;
+  height: auto;
+  margin-right: 20px;
+}
+
+.menu-icon {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-icon div {
+  width: 25px;
+  height: 3px;
+  background-color: #000;
+  margin: 4px;
+  transition: all 0.3s ease;
+}
+
+.menu-icon.active div {
+  background-color: #4CAF50; /* Color del botón activo */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .navbar-menu {
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: -100%;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    transition: left 0.3s ease;
+  }
+
+  .navbar-menu.active {
+    left: 0;
+  }
+
+  .navbar-item {
+    margin-left: 0;
+    width: 100%;
+    text-align: center;
+    opacity: 1;
+    animation: none;
+  }
+
+  .navbar-item a {
+    display: block;
+    padding: 10px 0;
+    border-bottom: 1px solid transparent; /* Elimina el borde inferior */
+  }
+
+  .navbar-brand {
+    opacity: 1;
+    animation: none;
+  }
+
+  .menu-icon {
+    display: flex;
+  }
+}
