@@ -1,20 +1,26 @@
-/* Contacto.css */
-.contacto-container {
+.contacto-container-outer {
     width: 100%;
+    background-color: rgb(37, 125, 37);
+    padding: 20px 0; 
+}
+
+.contacto-container {
     max-width: 600px;
     margin: 0 auto;
     padding: 20px;
     box-sizing: border-box;
+    background-color: inherit; 
 }
 
 .contacto-title {
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 20px;
-    text-align: left;
+    text-align: center;
+    color: white; 
 }
 
 .contacto-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin-bottom: 20px;
 }
 
@@ -22,39 +28,30 @@
     display: flex;
     align-items: center;
     margin-bottom: 10px;
+    color: white; /* Ajusta el color del texto si es necesario */
 }
 
 .contacto-icon {
-    font-size: 1.5rem;
-    color: green;
     margin-right: 10px;
 }
 
 .contacto-form {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .contacto-input, .contacto-textarea {
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
     box-sizing: border-box;
 }
 
-.contacto-textarea {
-    height: 100px;
-    resize: none;
-}
-
 .contacto-button {
-    align-self: flex-end;
     padding: 10px 20px;
-    background-color: green;
-    color: white;
+    background-color: #fff; /* Color del botón */
+    color: green; /* Color del texto del botón */
     border: none;
-    border-radius: 5px;
     cursor: pointer;
 }

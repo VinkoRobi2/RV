@@ -19,7 +19,7 @@ body{
 
 .cesped-wrapper {
     display: flex;
-    margin-top: 300px;
+    margin-top: 100px;
     justify-content: center; /* Centra los componentes dentro del contenedor */
     flex-wrap: wrap; /* Permite que los componentes se envuelvan en líneas nuevas si es necesario */
 }
