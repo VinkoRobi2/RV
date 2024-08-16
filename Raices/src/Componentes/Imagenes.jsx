@@ -34,7 +34,7 @@ const Imagenes = () => {
                {imagenIndex === 0 ? (
                         <p className='t1'>Transforma tu jardín con el césped más verde y vibrante.</p>
                     ) : (
-                        <p>Disfruta de un oasis en casa con nuestro césped de alta calidad.</p>
+                        <p className='t1'>Disfruta de un oasis en casa con nuestro césped de alta calidad.</p>
                     )}
                 </div>
             </div>
